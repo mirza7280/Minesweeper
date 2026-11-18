@@ -6,7 +6,6 @@ using namespace std;
 int main()
 {
     Board game;
-
     cout << "Welcome to Minesweeper!\n";
 
     game.showBoard();
