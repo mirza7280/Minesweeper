@@ -24,6 +24,10 @@ public:
 
     void showBoard();
 
+    void showInternalBoard();
+
+    int countMines();
+
     int getCellValue(int row, int col);
 
     bool isValid(int row, int col);

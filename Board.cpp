@@ -74,7 +74,7 @@ void Board::calculateNumbers()
 }
 
 
-// Display Board
+// Display Player Board
 void Board::showBoard()
 {
     cout << "\n       MINESWEEPER GAME\n\n";
@@ -101,6 +101,56 @@ void Board::showBoard()
     }
 
     cout << "\n";
+}
+
+
+// Display Internal Board (Testing Only)
+void Board::showInternalBoard()
+{
+    cout << "\n       INTERNAL BOARD (TESTING)\n\n";
+
+    cout << "    ";
+
+    for (int col = 0; col < SIZE; col++)
+    {
+        cout << setw(3) << col;
+    }
+
+    cout << "\n\n";
+
+    for (int row = 0; row < SIZE; row++)
+    {
+        cout << setw(3) << row << " ";
+
+        for (int col = 0; col < SIZE; col++)
+        {
+            cout << setw(3) << internalBoard[row][col];
+        }
+
+        cout << endl;
+    }
+
+    cout << "\n";
+}
+
+
+// Count Total Mines
+int Board::countMines()
+{
+    int count = 0;
+
+    for (int row = 0; row < SIZE; row++)
+    {
+        for (int col = 0; col < SIZE; col++)
+        {
+            if (internalBoard[row][col] == -1)
+            {
+                count++;
+            }
+        }
+    }
+
+    return count;
 }
 
 
