@@ -19,5 +19,4 @@ public:
     void initializeBoards();
     void showDisplayBoard();
 };
-
 #endif

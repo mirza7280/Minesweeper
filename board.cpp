@@ -58,7 +58,7 @@ int main()
 {
     Board game;
 
-    cout << "========== MINESWEEPER ==========" << endl;
+    cout << "==== MINESWEEPER ====" << endl;
 
     game.showDisplayBoard();
 
