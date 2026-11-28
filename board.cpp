@@ -1,8 +1,7 @@
-
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include "Board.h"
+#include "board.h"
 
 using namespace std;
 
@@ -13,6 +12,7 @@ Board::Board()
 
     initializeBoards();
     placeMines();
+    countAdjacentMines();
 }
 
 // Initialize both boards
@@ -45,6 +45,53 @@ void Board::placeMines()
         {
             internalBoard[row][col] = 'M';
             minesPlaced++;
+        }
+    }
+}
+
+// Count adjacent mines
+void Board::countAdjacentMines()
+{
+    for (int i = 0; i < SIZE; i++)
+    {
+        for (int j = 0; j < SIZE; j++)
+        {
+            // Skip mine cells
+            if (internalBoard[i][j] == 'M')
+            {
+                continue;
+            }
+
+            int count = 0;
+
+            // Check 8 neighboring cells
+            for (int r = -1; r <= 1; r++)
+            {
+                for (int c = -1; c <= 1; c++)
+                {
+                    // Skip current cell
+                    if (r == 0 && c == 0)
+                    {
+                        continue;
+                    }
+
+                    int newRow = i + r;
+                    int newCol = j + c;
+
+                    // Check board boundaries
+                    if (newRow >= 0 && newRow < SIZE &&
+                        newCol >= 0 && newCol < SIZE)
+                    {
+                        if (internalBoard[newRow][newCol] == 'M')
+                        {
+                            count++;
+                        }
+                    }
+                }
+            }
+
+            // Convert integer to character
+            internalBoard[i][j] = '0' + count;
         }
     }
 }
@@ -85,7 +132,6 @@ void Board::showInternalBoard()
     {
         for (int j = 0; j < SIZE; j++)
         {
-            // Print character directly, not ASCII value
             cout << internalBoard[i][j] << "  ";
         }
 
