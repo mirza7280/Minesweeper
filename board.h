@@ -22,5 +22,4 @@ public:
     void showDisplayBoard();
     void showInternalBoard();
 };
-
 #endif

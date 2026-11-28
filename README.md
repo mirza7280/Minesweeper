@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 💣 Minesweeper Console Game
 
 A console-based Minesweeper game developed using **C++**. This project is part of my Data Structures and Algorithms (DSA) learning journey.
@@ -80,3 +81,6 @@ GitHub: https://github.com/mirza7280
 ---
 
 *This project is currently under development.*
+=======
+
+>>>>>>> origin/main
