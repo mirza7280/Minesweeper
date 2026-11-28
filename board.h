@@ -8,7 +8,7 @@ private:
     static const int SIZE = 9;
 
     // Internal Board
-    int internalBoard[SIZE][SIZE];
+    char internalBoard[SIZE][SIZE];
 
     // Display Board
     char displayBoardArray[SIZE][SIZE];
@@ -17,7 +17,10 @@ public:
     Board();
 
     void initializeBoards();
+    void placeMines();
+
     void showDisplayBoard();
+    void showInternalBoard();
 };
 
 #endif
